@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 style="text-align: center;">Links</h1>
+
+<%= form_tag links_path, method: :get, class: "filter-form" do %>
+  <div class="filter-fields">
+    <%= label_tag :domain, "Domínio:" %>
+    <%= text_field_tag :domain, params[:domain] %>
+
+    <%= label_tag :tld, "TLD:" %>
+    <%= text_field_tag :tld, params[:tld] %>
+
+    <%= label_tag :cctld, "ccTLD:" %>
+    <%= text_field_tag :cctld, params[:cctld] %>
+  </div>
+
+  <div class="filter-actions">
+    <%= link_to "Limpar", links_path %>
+    <%= submit_tag "Filtrar" %>
+  </div>
+<% end %>
+
+<div id="links">
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Domínio</th>
+        <th>URL</th>
+        <th>TLD</th>
+        <th>ccTLD</th>
+      </tr>
+
+      <% @links.each do |link| %>
+        <tr>
+          <td><%= link.domain %></td>
+          <td><%= link.url %></td>
+          <td><%= link.tld %></td>
+          <td><%= link.cctld %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="pagination-container">
+    <%= paginate @links %>
+  </div>
+</div>

@@ -13,3 +13,100 @@
  *= require_tree .
  *= require_self
  */
+
+/* Estilizando a tabela com grid */
+.table-container {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 16px;
+}
+
+/* Estilizando o cabeçalho */
+.table-container th {
+  padding: 8px;
+  text-align: left;
+  background-color: #ececec;
+  border: 1px solid #ccc;
+}
+
+/* Estilizando as células */
+.table-container td {
+  padding: 8px;
+  text-align: left;
+  word-break: break-all;
+  border: 1px solid #ccc;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Estilizando os filtros */
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-actions input[type="submit"] {
+  padding: 8px 16px;
+  margin-top: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-actions a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Estilizando a paginação */
+.pagination-container {
+  padding-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.pagination span {
+  margin: 0 4px;
+}
+
+.pagination .current {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a {
+  padding: 8px 12px;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
