@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versões utilizadas
 
-Things you may want to cover:
+Ruby 3.1.2
 
-* Ruby version
+Rails 7.0.5
 
-* System dependencies
+MySQL
 
-* Configuration
+## Execução e Testes
 
-* Database creation
+Instalar as gems:
+```
+bundle install
+```
 
-* Database initialization
+Crias as bases de dados - development e test:
+```
+rails db:create
+```
 
-* How to run the test suite
+Executar migrações:
+```
+rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Executar a task de importação dos links:
+```
+rails import_urls
+```
 
-* Deployment instructions
+Executar a aplicação:
+```
+rails s
+```
 
-* ...
+Executar testes:
+```
+rspec
+```
+
+Rotas disponíveis:
+```
+rails routes
+```
